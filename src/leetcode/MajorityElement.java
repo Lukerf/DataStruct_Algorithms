@@ -20,12 +20,6 @@ import java.util.Iterator;
 import java.util.Map;
 
 public class MajorityElement {
-	public static void main(String[] args)
-	{
-		int[] input = {2,2,2,2,1,1,1};
-		MajorityElement maj = new MajorityElement(input);
-		System.out.println(maj.maxNum);
-	}
 	public int maxNum;
 	MajorityElement(int[] input)
 	{
