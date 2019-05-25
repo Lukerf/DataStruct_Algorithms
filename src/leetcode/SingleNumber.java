@@ -18,6 +18,39 @@
 */
 package leetcode;
 
+import java.util.Arrays;
+
 public class SingleNumber {
-	
+	/*排序，然后找后一个不等于前一个的数，不是线性时间复杂度*/
+	public int result;
+	SingleNumber(int[] nums)
+	{
+		if(nums.length == 1)
+			result = nums[0];
+		else {
+			Arrays.sort(nums);
+			for(int i = 0;i<nums.length-1;i=i+2)
+			{
+				if(nums[i]!=nums[i+1])
+				{
+					result = nums[i];
+					break;
+				}
+			}
+			if(nums[nums.length-1]!=nums[nums.length-2])
+				result = nums[nums.length-1];
+		}
+		
+	}
+	/**异或操作*/
+    public int singleNumber2(int[] nums) {
+        
+        int res=nums[0];
+        for(int i=1;i<nums.length;i++)
+        {
+            res=res^nums[i];
+        }
+        return res;
+        
+    }
 }
